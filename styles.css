@@ -1,0 +1,226 @@
+/* Estilos globales */
+body {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3e5f5;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #e61b98;
+    color: white;
+    padding: 40px 0;
+    font-size: 3em;
+    position: relative;
+}
+
+h1,
+h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Sección de introducción */
+#introduction {
+    margin: 40px 0;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    /* Tamaño original */
+    height: 200px;
+    /* Tamaño original */
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* Radio de esquina */
+    object-fit: cover;
+    /* Ajusta la imagen a cubrir el área */
+    display: block;
+    /* Asegúrate de que sea un bloque */
+}
+
+.message {
+    position: absolute;
+    /* Asegura que el texto esté sobre la imagen */
+    top: 0;
+    /* Coloca el texto en la parte superior */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    font-size: 1em;
+    /* Tamaño de fuente */
+    line-height: 1.5;
+    /* Espaciado entre líneas */
+    text-align: left;
+    /* Alinear texto a la izquierda */
+    display: none;
+    /* Inicialmente oculto */
+}
+
+/* Mostrar el mensaje cuando la carta se abra */
+.card.open .message {
+    display: block;
+    /* Mostrar el mensaje al abrir */
+}
+
+.card.open .envelope {
+    display: none;
+    /* Ocultar la imagen al abrir */
+}
+
+
+
+/* Efectos de animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contador */
+#countdown {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #e61b98;
+    /* Color del texto del contador */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco con transparencia */
+    padding: 10px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    display: inline-block;
+    /* Para centrarlo */
+}
+
+/* Galería de fotos con animación */
+.photos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.photos img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.1);
+}
+
+/* Efecto Parallax */
+#parallax {
+    position: relative;
+    height: 400px;
+    /* Aumentar altura para el corazón */
+    text-align: center;
+    color: #333;
+}
+
+.parallax-background {
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: translateZ(-1px);
+    height: 100%;
+    animation: parallax 10s infinite;
+}
+
+@keyframes parallax {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 -500px;
+    }
+}
+
+.gift {
+    position: relative;
+    display: inline-block;
+    width: 250px; /* Tamaño del regalo */
+    height: 250px; /* Tamaño del regalo */
+    margin: 0 auto; /* Eliminar margen para centrar */
+    cursor: pointer;
+}
+
+
+.gift .envelope {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* Radio de esquina */
+    object-fit: cover;
+    /* Ajusta la imagen a cubrir el área */
+    display: block;
+    /* Asegúrate de que sea un bloque */
+}
+
+.gift .message {
+    position: absolute;
+    /* Asegura que el texto esté sobre la imagen */
+    top: 0;
+    /* Coloca el texto en la parte superior */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    font-size: 1em;
+    /* Tamaño de fuente */
+    line-height: 1.5;
+    /* Espaciado entre líneas */
+    text-align: left;
+    /* Alinear texto a la izquierda */
+    display: none;
+    /* Inicialmente oculto */
+}
+
+/* Mostrar el mensaje cuando el regalo se abra */
+.gift.open .message {
+    display: block;
+    /* Mostrar el mensaje al abrir */
+}
+
+.gift.open .envelope {
+    display: none;
+    /* Ocultar la imagen al abrir */
+}
+
+
+/* Estilo para la imagen del corazón */
+.animate-heart {
+    width: 80px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantener la proporción de aspecto */
+    margin-top: 40px; /* Espaciado superior */
+}
