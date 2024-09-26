@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Mi Amor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 <body>
     <header>
+        
         <h1>Te Amo, Catalina</h1>
     </header>
 
@@ -17,19 +19,30 @@
     
         <h2>Una carta especial para ti</h2>
         <div class="card" id="love-letter">
-            <img src="img/carta.jpg" alt="Carta" class="envelope" /> <!-- Imagen de la carta -->
+            <img src="img/carta.jpg" alt="Carta" class="envelope" /> 
             <p class="message hidden">Gracias por todo lo que haces por mí. Te amo infinitamente, Catalina. Gracias por todo. Que esto nunca se acabe. Te amo con mi vida entera. ❤️</p>
-        </div>
+        </div>  
     </section>
     
-    <section id="gallery">
-        <h2>Por más momentos así</h2>
-        <div class="photos">
-            <img src="img/1.jpg" alt="Foto 1" class="animate-photo">
-            <img src="img/2.jpg" alt="Foto 2" class="animate-photo">
-            <img src="img/3.jpg" alt="Foto 3" class="animate-photo">
+    <section class="carousel">
+        <button class="carousel-button left-button">←</button>
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide"><img src="img/1.jpg" alt="Foto 1"></li>
+                <li class="carousel-slide"><img src="img/2.jpg" alt="Foto 2"></li>
+                <li class="carousel-slide"><img src="img/3.jpg" alt="Foto 3"></li>
+                <li class="carousel-slide"><img src="img/4.jpg" alt="Foto 4"></li>
+                <li class="carousel-slide"><img src="img/5.jpg" alt="Foto 5"></li>
+                <li class="carousel-slide"><img src="img/6.jpg" alt="Foto 6"></li>
+                <li class="carousel-slide"><img src="img/7.jpg" alt="Foto 7"></li>
+                <li class="carousel-slide"><img src="img/8.jpg" alt="Foto 8"></li>
+                <li class="carousel-slide"><img src="img/9.jpg" alt="Foto 9"></li>
+                <li class="carousel-slide"><img src="img/10.jpg" alt="Foto 10"></li>
+            </ul>
         </div>
+        <button class="carousel-button right-button">→</button>
     </section>
+    
 
     <section id="parallax">
         <div class="parallax-background"></div>
@@ -41,7 +54,7 @@
     <section id="message">
         <h2>Sorpresa</h2>
         <div class="gift" id="gift">
-            <img src="img/gift.jpg" alt="Regalo" class="envelope" /> <!-- Imagen del regalo -->
+            <img src="img/gift.jpg" alt="Regalo" class="envelope" /> 
             <p class="message hidden">Que este amor que tenemos nunca se termine, esto es hasta el ♾️. Esta página que te hice con mucho cariño se irá actualizando cada mes, y podrás ver más cosas.</p>
         </div>
         <p>Con todo mi amor, para vos, tu único amor. Jajajaj ❤️</p>

@@ -1,3 +1,44 @@
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const leftButton = document.querySelector('.left-button');
+const rightButton = document.querySelector('.right-button');
+
+let currentSlideIndex = 0;
+
+const updateSlides = () => {
+    slides.forEach((slide, index) => {
+        slide.classList.remove('left', 'right', 'current');
+        
+        // Asignamos clases para controlar el tamaño y posición de las imágenes
+        if (index === currentSlideIndex) {
+            slide.classList.add('current');
+        } else if (index === (currentSlideIndex - 1 + slides.length) % slides.length) {
+            slide.classList.add('left');
+        } else if (index === (currentSlideIndex + 1) % slides.length) {
+            slide.classList.add('right');
+        }
+    });
+
+    // Centramos la imagen actual en la vista
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(${-slideWidth * currentSlideIndex}px)`;
+};
+
+rightButton.addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    updateSlides();
+});
+
+leftButton.addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    updateSlides();
+});
+
+updateSlides();
+
+
+
+// Code for opening cards
 const card = document.getElementById("love-letter");
 const message = card.querySelector(".message");
 
@@ -12,8 +53,7 @@ gift.addEventListener("click", () => {
     gift.classList.toggle("open"); // Alterna la clase para el efecto de apertura
 });
 
-
-// Contador desde el 19 de julio de 2024
+// Countdown timer
 const startDate = new Date('2024-07-19T00:00:00'); // Fecha de inicio
 const countdownElement = document.getElementById('countdown');
 
@@ -21,7 +61,6 @@ function updateCountdown() {
     const now = new Date(); // Fecha actual
     const elapsed = now - startDate; // Tiempo transcurrido en milisegundos
 
-    // Cálculo de los diferentes componentes de tiempo
     const secondsInMinute = 60;
     const secondsInHour = secondsInMinute * 60;
     const secondsInDay = secondsInHour * 24;
@@ -41,4 +80,3 @@ function updateCountdown() {
 
 // Actualiza el contador cada segundo
 setInterval(updateCountdown, 1000);
-
