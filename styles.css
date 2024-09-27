@@ -28,77 +28,13 @@ h2 {
     animation: fadeIn 3s ease-in-out;
 }
 
-.carousel {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 400px;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 600px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.carousel-slide {
-    min-width: 200px;
-    transition: transform 0.5s ease-in-out;
-    text-align: center;
-}
-
-.carousel-slide img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
-}
-
-.carousel-slide.current img {
-    transform: scale(1.2); /* Imagen central más grande */
-}
-
-.carousel-slide.left img, .carousel-slide.right img {
-    transform: scale(0.8); /* Imágenes laterales más pequeñas */
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 24px;
-}
-
-.left-button {
-    left: 10px;
-}
-
-.right-button {
-    right: 10px;
-}
-
-
-
-/* Cartas y regalos interactivos */
-.card, .gift {
+.card {
     position: relative;
     display: inline-block;
     width: 250px;
+    /* Tamaño original */
     height: 200px;
+    /* Tamaño original */
     margin: 0 auto;
     cursor: pointer;
 }
@@ -107,32 +43,44 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    /* Radio de esquina */
     object-fit: cover;
+    /* Ajusta la imagen a cubrir el área */
     display: block;
+    /* Asegúrate de que sea un bloque */
 }
 
 .message {
     position: absolute;
+    /* Asegura que el texto esté sobre la imagen */
     top: 0;
+    /* Coloca el texto en la parte superior */
     left: 0;
     right: 0;
     bottom: 0;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
+    /* Esquinas redondeadas */
     font-size: 1em;
+    /* Tamaño de fuente */
     line-height: 1.5;
+    /* Espaciado entre líneas */
     text-align: left;
+    /* Alinear texto a la izquierda */
     display: none;
+    /* Inicialmente oculto */
 }
 
 /* Mostrar el mensaje cuando la carta se abra */
-.card.open .message, .gift.open .message {
+.card.open .message {
     display: block;
+    /* Mostrar el mensaje al abrir */
 }
 
-.card.open .envelope, .gift.open .envelope {
+.card.open .envelope {
     display: none;
+    /* Ocultar la imagen al abrir */
 }
 
 /* Efectos de animación */
@@ -151,16 +99,80 @@ h2 {
     font-size: 1.5em;
     margin-top: 20px;
     color: #e61b98;
+    /* Color del texto del contador */
     background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco con transparencia */
     padding: 10px;
+    /* Espaciado interno */
     border-radius: 10px;
+    /* Esquinas redondeadas */
     display: inline-block;
+    /* Para centrarlo */
 }
+ 
+/**/#gallery {
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 33.33%;
+    opacity: 0.6;
+    transform: scale(0.8);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+   max-height: 450px; /* Ajustar la altura para que sean más largas */
+    object-fit: cover; /* Mantener la relación de aspecto */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
 
 /* Efecto Parallax */
 #parallax {
     position: relative;
     height: 400px;
+    /* Aumentar altura para el corazón */
     text-align: center;
     color: #333;
 }
@@ -189,9 +201,68 @@ h2 {
     }
 }
 
+.gift {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    /* Tamaño del regalo */
+    height: 250px;
+    /* Tamaño del regalo */
+    margin: 0 auto;
+    /* Eliminar margen para centrar */
+    cursor: pointer;
+}
+
+.gift .envelope {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* Radio de esquina */
+    object-fit: cover;
+    /* Ajusta la imagen a cubrir el área */
+    display: block;
+    /* Asegúrate de que sea un bloque */
+}
+
+.gift .message {
+    position: none;
+    /* Asegura que el texto esté sobre la imagen */
+    top: 0;
+    /* Coloca el texto en la parte superior */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    font-size: 1em;
+    /* Tamaño de fuente */
+    line-height: 1.5;
+    /* Espaciado entre líneas */
+    text-align: left;
+    /* Alinear texto a la izquierda */
+    display: none;
+    /* Inicialmente oculto */
+}
+
+/* Mostrar el mensaje cuando el regalo se abra */
+.gift.open .message {
+    display: block;
+    /* Mostrar el mensaje al abrir */
+}
+
+.gift.open .envelope {
+    display: none;
+    /* Ocultar la imagen al abrir */
+}
+
 /* Estilo para la imagen del corazón */
 .animate-heart {
     width: 80px;
+    /* Ajusta el tamaño según sea necesario */
     height: auto;
+    /* Mantener la proporción de aspecto */
     margin-top: 40px;
+    /* Espaciado superior */
 }
